@@ -48,7 +48,7 @@ router.post('/', async (req, res, next) => {
     if (count) {
         return res.status(400).json({ 
             status: 'fail',
-            message: 'Ups! Lokasi cuaca sudah tersedia' 
+            message: 'Ups! Location already exists' 
         });
     }
 
@@ -100,7 +100,7 @@ router.post('/', async (req, res, next) => {
 
     res.status(201).json({
         status: 'success',
-        message: 'Berhasil menambahkan lokasi cuaca',
+        message: 'New location has been added!',
     });
 });
 
@@ -136,7 +136,7 @@ router.put('/', async (req, res, next) => {
     if (!count) {
         return res.status(404).json({
             status: 'fail',
-            message: 'Lokasi cuaca tidak ditemukan'
+            message: 'Location not found'
         });
     }
 
@@ -191,7 +191,7 @@ router.put('/', async (req, res, next) => {
 
     res.status(200).json({
         status: 'success',
-        message: 'Berhasil memperbarui lokasi cuaca',
+        message: 'Location has been updated!',
     });
 });
 
@@ -214,13 +214,13 @@ router.get('/', async (req, res, next) => {
     if (!forecastData.length) {
         return res.status(404).json({
             status: 'fail',
-            message: 'Lokasi cuaca tidak ditemukan'
+            message: 'Location not found'
         });
     }
 
     res.status(200).json({
         status: 'success',
-        message: 'Berhasil mendapatkan data lokasi cuaca',
+        message: 'Success to get weather location',
         data: forecastData
     });
 });
