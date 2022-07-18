@@ -15,13 +15,13 @@ router.get('/', verifyToken, async (req, res, next) => {
   if (!users.length) {
     return res.status(404).json({
       status: 'fail',
-      message: 'User tidak ditemukan'
+      message: 'Users not found'
     });
   }
 
   res.status(200).json({
     status: 'success',
-    message: 'Berhasil mendapatkan data user',
+    message: 'Success to get users',
     data: users
   });
 });
@@ -50,7 +50,7 @@ router.post('/register', async (req, res, next) => {
 
     res.json({
       status: 'success',
-      message: 'Registrasi berhasil!'
+      message: 'Your account has been successfully created'
     })
   } catch (error) {
     console.log(error);
@@ -72,7 +72,7 @@ router.post('/login', async (req, res, next) => {
   if (!user) {
     return res.status(404).json({
       status: 'fail',
-      message: 'User tidak terdaftar'
+      message: 'User not registered'
     });
   }
 
@@ -80,7 +80,7 @@ router.post('/login', async (req, res, next) => {
   if (!match) {
     return res.status(400).json({
       status: 'fail',
-      message: 'Password yang anda masukan salah'
+      message: 'Password incorrect'
     })
   }
 
@@ -100,7 +100,7 @@ router.post('/login', async (req, res, next) => {
 
   res.json({ 
     status: 'success',
-    message: 'Login berhasil',
+    message: 'Login Successful',
     user: {
       id: id,
       name: name
