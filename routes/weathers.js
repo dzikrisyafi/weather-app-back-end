@@ -101,7 +101,6 @@ router.post('/', async (req, res, next) => {
     res.status(201).json({
         status: 'success',
         message: 'Berhasil menambahkan lokasi cuaca',
-        data: forecastData
     });
 });
 
@@ -193,7 +192,6 @@ router.put('/', async (req, res, next) => {
     res.status(200).json({
         status: 'success',
         message: 'Berhasil memperbarui lokasi cuaca',
-        data: forecastData
     });
 });
 
